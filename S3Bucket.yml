@@ -1,0 +1,24 @@
+TemplateFormatVersion : '2010-09-09'
+
+Description : 'Test S3 bucket creation for Xero'
+
+Parameter: 
+
+Rules: 
+
+Conditions:
+
+Resources:
+    S3Bucket:
+        DeletionPolicy: Retain
+        Type: AWS::S3::Bucket
+        Description: Creating AWS S3 bucket from CloudFormation
+        Properties: {}
+            BucketName: S3Bucket_Test
+
+        VersioningConfiguration:
+            Status: Enabled
+
+Outputs:
+    S3Bucket:
+        Value: !Ref S3Bucket
